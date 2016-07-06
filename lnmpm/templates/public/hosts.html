@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container-narrow">
+        <h1>创建主机</h1>
+        <br/>
+        <form id="registerForm" class="form form-register" method="POST" action="" role="form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <div class="form-group">
+                {{ form.site.label }}
+                {{ form.site(placeholder="域名", class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.client.label }}
+                {{ form.client(placeholder="客户", class_="form-control") }}
+            </div>
+            <p><input class="btn btn-default btn-submit" type="submit" value="创建主机"></p>
+        </form>
+    </div>
+{% endblock %}
+
